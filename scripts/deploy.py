@@ -79,7 +79,7 @@ def resolve_workspace_name(explicit_workspace_name: str | None, environment_name
 parser = argparse.ArgumentParser(description="Deploy PBIP to Fabric")
 parser.add_argument("--workspace_name", type=str, required=False, help="Target workspace name")
 parser.add_argument("--environment", type=str, default="DEV", help="Environment name (default: DEV)")
-parser.add_argument("--spn-auth", type=bool, default=False, help="Use SPN authentication")
+parser.add_argument("--spn-auth", type=bool, default=True, help="Use SPN authentication")
 args = parser.parse_args()
 
 resolved_environment = ((args.environment or "").strip().upper() or "DEV")
